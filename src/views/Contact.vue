@@ -5,28 +5,22 @@
   <router-link class="text-sm-right nav-link" to="/Contact">{{contactLink}}</router-link>
 </nav></header>
 <main><div class="contact">
+  <form id="inputForm">
   <div class="form-group">
     <label for="exampleFormControlInput1">Din email</label>
     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="namn@exempel.se">
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Ditt meddelande</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3"></textarea>
   </div>
   <div class="d-flex justify-content-end">
-    <button type="button" class="btn btn-outline-dark">Skicka ditt meddelande</button>
+    <button type="button" v-on:click="contactConfirmation()" class="btn btn-outline-dark">Skicka ditt meddelande</button>
   </div>
+  </form>
 </div>
 </main>
-    <div class="basket">
-      <div class="overlay" data-click="hide"></div>
-        <div id="cart" class="jumbotron corners padding transp">
-          <h3>Varukorg</h3>
-          <ul>
-            <li class="total">Total <span>0</span></li>
-          </ul>
-        </div>
-      </div>
+    
     </div>
 </template>
 <script>
@@ -36,6 +30,14 @@ export default {
     return {
       homeLink: 'Lumia',
       contactLink: 'Kontakta oss'
+    }
+  },
+  methods: {
+    contactConfirmation(){
+      document.getElementById('exampleFormControlInput1').value = ""
+      document.getElementById('exampleFormControlTextarea1').value = ""
+
+      alert('Tack för ditt meddelande! Vi kommer att kontakta dig snarast :))')
     }
   }
 

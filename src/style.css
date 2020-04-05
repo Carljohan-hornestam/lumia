@@ -133,7 +133,6 @@
   }
   
   .basket{
-    display:none;
     z-index:2;
   }
   
@@ -152,5 +151,17 @@
     right:10vh;
     top:15vh;
     background-color:#aabbcc;
+  }
+
+  .removeOneItem {
+    font-size: small;
+  }
+
+  .cartText{
+    font-family: Lobster;
+    height: 5%;
+  }
+  .cartText:hover{
+    color: white;
   }
   
